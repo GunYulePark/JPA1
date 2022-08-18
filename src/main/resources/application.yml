@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create #application 실행 시점에 entitiy정보 보고, table 다 지우고 다시 생성.
+    properties:
+      hibernate:
+        # show_sql: true # system.out을 통해 log 찍는다.
+        format_sql: true
+
+# 이거 밑에꺼 쓰니까 오류 난다.
+#  devtools:
+#    livereload:
+#      enabled: true
+#
+#  resources:
+#    static-locations:
+#      url: src/main/resources/static/
+#
+#  thymeleaf:
+#    cache: false
+#    prefix:
+#      url: src/main/resources/templates/
+
+logging: # 운영환경에서는 log는 logger를 통해서 찍어야 한다.
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
