@@ -21,6 +21,7 @@ public class Order {
     @JoinColumn(name = "member_id") // FK의 이름을 "member_id"로.
     private Member member;
 
+    @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems = new ArrayList<>();
 
     private Delivery delivery;
